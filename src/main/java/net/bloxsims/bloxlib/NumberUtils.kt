@@ -34,7 +34,7 @@ fun Int.formatWithSuffix() : String {
 }
 
 fun Int.formatWithCommas() : String {
-    return this.toDouble().formatWithCommas()
+    return this.toString().split(Regex("(?<=\\d(?=(\\d{3}) (?!\\d)))")).joinToString(",")
 }
 
 fun BigInteger.formatWithSuffix() : String {
@@ -42,7 +42,7 @@ fun BigInteger.formatWithSuffix() : String {
 }
 
 fun BigInteger.formatWithCommas() : String {
-    return this.toDouble().formatWithCommas()
+    return this.toString().split(Regex("(?<=\\d(?=(\\d{3}) (?!\\d)))")).joinToString(",")
 }
 
 fun Long.formatWithSuffix() : String {
@@ -50,7 +50,7 @@ fun Long.formatWithSuffix() : String {
 }
 
 fun Long.formatWithCommas() : String {
-    return this.toDouble().formatWithCommas()
+    return this.toString().split(Regex("(?<=\\d(?=(\\d{3}) (?!\\d)))")).joinToString(",")
 }
 
 fun Long.pow(exp: Int) : Long {
